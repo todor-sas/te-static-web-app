@@ -13,7 +13,7 @@
       const { clientPrincipal } = payload;
       return clientPrincipal;
     }
-    
+
     (async () => {
     console.log(await getUserInfo());
     })();
@@ -25,8 +25,10 @@
     <h1>TE Vanilla JavaScript App</h1>
     <script>
       let d = new Date();
-      document.body.innerHTML = "<h1>Today's date is " + d + "</h1>"
-
+      document.body.innerHTML = "<h2>Today's date is " + d + "</h2>"
+      document.body.innerHTML += "<h3>Check the console for user info</h3>";
+      document.body.innerHTML += "<h3>Check the network tab for the request to /.auth/me</h3>";
+      document.body.innerHTML += "<h3>Check the response in the network tab</h3>";  
     </script>
   </main>
 </body>
