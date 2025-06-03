@@ -6,11 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <title>Vanilla JavaScript App</title>
+  <script>
+    async function getUserInfo() {
+      const response = await fetch('/.auth/me');
+      const payload = await response.json();
+      const { clientPrincipal } = payload;
+      return clientPrincipal;
+    }
+    
+    (async () => {
+    console.log(await getUserInfo());
+    })();
+  </script>
 </head>
 
 <body>
   <main>
     <h1>TE Vanilla JavaScript App</h1>
+    <script>
+      let d = new Date();
+      document.body.innerHTML = "<h1>Today's date is " + d + "</h1>"
+
+    </script>
   </main>
 </body>
 
